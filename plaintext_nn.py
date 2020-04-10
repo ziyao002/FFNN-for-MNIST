@@ -23,10 +23,10 @@ def xavier_init(fan_in, fan_out):
     high = np.sqrt(6.0 / (fan_in + fan_out))
     return np.random.uniform(low, high, (fan_in, fan_out))
 
-def relu(x):    # ReLUpython
+def relu(x):
     return np.maximum(x, 0)
 
-def drelu(x):   # derivative of ReLU
+def drelu(x):
     return 0 if x <= 0 else 1
 drelu = np.vectorize(drelu)
 
