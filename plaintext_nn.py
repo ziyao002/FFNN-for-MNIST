@@ -56,7 +56,7 @@ for epoch in range(EPOCHS):
 
         # Forward propagation
         a1 = x_train.transpose()                # (784,64)
-        z2 = np.dot(W2, a1) % Q + b2            # (128,784) * (784,64)
+        z2 = np.dot(W2, a1) + b2                # (128,784) * (784,64)
         a2 = relu(z2)                           # (128,64)
         z3 = np.dot(W3, a2) + b3                # (10,128) * (128,64)
         a3 = relu(z3)                           # (10,64)
